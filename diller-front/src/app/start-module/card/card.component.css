@@ -1,0 +1,13 @@
+.card{
+    padding: 5px;
+    width: 19rem;
+    margin: 10px 10px 10px 10px;
+}
+
+h4{
+    color: #333;
+}
+
+.card-body{
+    padding: 5px;
+}

@@ -1,0 +1,25 @@
+.center {
+    margin: 0 auto;
+    width: 30%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.067);
+    color: white;
+    border-radius: 1%;
+    vertical-align: text-top;
+}
+
+.btn-grey{
+    background: rgb(65, 65, 65);
+}
+
+.btn-center{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    left: 35%;
+}
+
+.bottom-20{
+    position: relative;
+    top: 20px;
+}
