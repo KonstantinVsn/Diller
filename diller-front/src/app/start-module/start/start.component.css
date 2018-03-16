@@ -21,3 +21,14 @@ div{
 .h-45{
     height: 45px;
 }
+
+.fa-star{
+    font-size:12px;
+}
+.p-10{
+    padding: 10px;
+}
+
+.m-1{
+    margin: 0px 1px 0px 1px;
+}

@@ -1,27 +1,33 @@
 <div class="col-md-6 center bottom-20">
-  <form class="bottom-20">
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" class="form-control" id="name">
+
+<!--Register form-->
+<form>
+    <p class="h5 text-center mb-4">Sign up</p>
+
+    <div class="md-form">
+        <i class="fa fa-user prefix grey-text"></i>
+        <input type="text" id="orangeForm-name" class="form-control" mdbActive>
+        <label for="orangeForm-name">Your name</label>
     </div>
-    <div class="form-group">
-      <label for="name">Email Address</label>
-      <input type="text" class="form-control" id="emailaddress">
+    <div class="md-form">
+        <i class="fa fa-envelope prefix grey-text"></i>
+        <input type="text" id="orangeForm-email" class="form-control" mdbActive>
+        <label for="orangeForm-email">Your email</label>
     </div>
-    <div class="form-group">
-      <label for="name">Mobile Number</label>
-      <input type="text" class="form-control" id="mobilenumber">
+
+    <div class="md-form">
+        <i class="fa fa-lock prefix grey-text"></i>
+        <input type="password" id="orangeForm-pass" class="form-control" mdbActive>
+        <label for="orangeForm-pass">Your password</label>
     </div>
-    <div class="form-group">
-      <label for="name">Password</label>
-      <input type="password" class="form-control" id="password">
+
+    <div class="text-center">
+        <button class="btn btn-deep-orange waves-light" mdbRippleRadius>Sign up</button>
     </div>
-    <div class="form-group">
-      <label for="name">Confirm Password</label>
-      <input type="password" class="form-control" id="confirmPassword">
-    </div>
-    <button class="btn btn-center indigo btn-submit" routerLink="/start" mdbRippleRadius>Submit</button>
-  </form>
+
+</form>
+<!--/Register form-->
+        
 </div>
 
 <router-outlet>

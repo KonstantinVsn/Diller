@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output, Input} from '@angular/core';
+import {Car} from '../models/car';
 
 @Component({
   selector: 'app-start',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartComponent implements OnInit {
 
-  constructor() { }
-
+  @Output()
+  public carList : Array<Car> = [
+    new Car("Mazda",1),
+    new Car("Honda",2),
+    new Car("Acura",3),
+    new Car("Totota",3),
+    new Car("Acura",4),
+    new Car("Totota",2),
+    new Car("Infinity",1),
+    new Car("Hundai",7)
+  ]
+  constructor() { 
+  }
   ngOnInit() {
+    console.table(this.carList);
   }
 
 }
