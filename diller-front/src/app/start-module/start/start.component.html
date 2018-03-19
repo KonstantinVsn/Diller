@@ -13,7 +13,7 @@
     <div *ngFor="let car of carList" class="col-6 waves-light" mdbRippleRadius>
       <!--First review-->
       <div class="media mb-1 stylish-color-dark">
-        <a class="media-left waves-light" mdbRippleRadius>
+        <a class="media-left waves-light" mdbRippleRadius  routerLink="/car/{{car.id}}">
           <img class="rounded-circle" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-13.jpg" alt="Generic placeholder image">
         </a>
         <div class="media-body p-10">
@@ -32,5 +32,4 @@
       </div>
     </div>
   </div>
-
 </div>

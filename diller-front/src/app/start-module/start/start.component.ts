@@ -10,14 +10,14 @@ export class StartComponent implements OnInit {
 
   @Output()
   public carList : Array<Car> = [
-    new Car("Mazda",1),
-    new Car("Honda",2),
-    new Car("Acura",3),
-    new Car("Totota",3),
-    new Car("Acura",4),
-    new Car("Totota",2),
-    new Car("Infinity",1),
-    new Car("Hundai",7)
+    new Car("Mazda",1, 1),
+    new Car("Honda",2, 2),
+    new Car("Acura",3, 3),
+    new Car("Totota",3, 4),
+    new Car("Acura",4, 5),
+    new Car("Totota",2, 6),
+    new Car("Infinity",1,7),
+    new Car("Hundai",7, 8)
   ]
   constructor() { 
   }

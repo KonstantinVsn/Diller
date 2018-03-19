@@ -4,10 +4,11 @@ import { StartComponent } from './start/start.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import {Routes, RouterModule} from '@angular/router';
-import { CardComponent } from './card/card.component';
+import { CarComponent } from './car/car.component';
 
 const appRoutes: Routes =[
-  { path: 'start', component: StartComponent}
+  { path: 'start', component: StartComponent},
+  { path: 'car/:id', component: CarComponent },
 ];
 
 @NgModule({
@@ -16,6 +17,6 @@ const appRoutes: Routes =[
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
-  declarations: [StartComponent, CardComponent]
+  declarations: [StartComponent, CarComponent]
 })
 export class StartModule { }
