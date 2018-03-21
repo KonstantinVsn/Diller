@@ -1,28 +1,40 @@
 import { Component, OnInit,Output, Input} from '@angular/core';
 import {Car} from '../models/car';
+import { Manager } from '../models/manager';
+import { ManagerService } from '../services/manager.service';
 
 @Component({
   selector: 'app-start',
   templateUrl: './start.component.html',
-  styleUrls: ['./start.component.css']
+  styleUrls: ['./start.component.css'],
+  providers:[ManagerService]
 })
 export class StartComponent implements OnInit {
+public managers: Manager[] = []
 
   @Output()
   public carList : Array<Car> = [
-    new Car("Mazda",1, 1),
-    new Car("Honda",2, 2),
-    new Car("Acura",3, 3),
-    new Car("Totota",3, 4),
-    new Car("Acura",4, 5),
-    new Car("Totota",2, 6),
-    new Car("Infinity",1,7),
-    new Car("Hundai",7, 8)
+    {name:"Mazda", stars: 1,id: 1},
+    {name:"Honda", stars: 2,id: 2},
+    {name:"Acura", stars: 1,id: 3},
+    {name:"Totota", stars: 4,id: 4},
+    {name:"Infinity", stars: 5,id: 5},
+    {name:"Infinity", stars: 5,id: 5},
+    {name:"Infinity", stars: 5,id: 5},
+    {name:"Infinity", stars: 5,id: 5},
+    {name:"Infinity", stars: 5,id: 5},
+    {name:"Infinity", stars: 5,id: 5},
+    {name:"Infinity", stars: 5,id: 5},
+    {name:"Infinity", stars: 5,id: 5},
+    {name:"Infinity", stars: 5,id: 5},
+    {name:"Infinity", stars: 5,id: 5},
+    {name:"Infinity", stars: 5,id: 5},
   ]
-  constructor() { 
+  constructor(private managerService: ManagerService) { 
   }
   ngOnInit() {
-    console.table(this.carList);
+    this.managerService.getManagers().subscribe(data => this.managers);
+    console.table(this.managers);
   }
 
 }

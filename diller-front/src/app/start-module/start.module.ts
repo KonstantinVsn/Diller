@@ -6,6 +6,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import {Routes, RouterModule} from '@angular/router';
 import { CarComponent } from './car/car.component';
 
+import { HttpClientModule }   from '@angular/common/http';
+
 const appRoutes: Routes =[
   { path: 'start', component: StartComponent},
   { path: 'car/:id', component: CarComponent },
@@ -15,7 +17,8 @@ const appRoutes: Routes =[
   imports: [
     CommonModule,
     MDBBootstrapModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   declarations: [StartComponent, CarComponent]
 })
