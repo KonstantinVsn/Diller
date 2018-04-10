@@ -1,3 +1,7 @@
+
+<app-side-bar>
+
+</app-side-bar>
 <div class="mx-auto w-50-p elegant-color-dark">
   <div class="mx-auto row">
     <form class="form-inline ml-md-auto">
@@ -5,7 +9,7 @@
         <input mdbActive type="email" class="form-control" id="form10" name="password">
       </div>
       <div class="md-form form-group">
-        <a class="btn btn-primary btn-sm waves-light indigo" mdbRippleRadius>search</a>
+        <a class="btn btn-primary btn-sm waves-light teal darken-3" mdbRippleRadius>search</a>
       </div>
     </form>
   </div>
@@ -13,7 +17,7 @@
     <div *ngFor="let car of carList" class="col-6 waves-light" mdbRippleRadius>
       <!--First review-->
       <div class="media mb-1 stylish-color-dark">
-        <a class="media-left waves-light" mdbRippleRadius  routerLink="/car/{{car.id}}">
+        <a class="media-left waves-light pic-pos" mdbRippleRadius  routerLink="/car/{{car.id}}">
           <img class="rounded-circle" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-13.jpg" alt="Generic placeholder image">
         </a>
         <div class="media-body p-10">
@@ -24,7 +28,6 @@
                 <li *ngFor="let star of ' '.repeat(car.stars).split(''), let x = index">
                   <i class="fa fa-star f-zise-12 amber-text"></i>
                 </li>
-
               </ul>
             </h6>
           </div>

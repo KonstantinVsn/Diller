@@ -31,3 +31,9 @@ div{
 .m-1{
     margin: 0px 1px 0px 1px;
 }
+
+.pic-pos{
+    position: relative;
+    top: 5px;
+    left: 2px;
+}

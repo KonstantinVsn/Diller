@@ -11,7 +11,7 @@ export class ManagerService {
   constructor(private http: HttpClient) {
 
   }
-  public baseUrl: string = "http://localhost:14979/api"
+  public baseUrl: string = "http://localhost:14980/api" //14980
   public serviceUrl: string = "/managers"
 
   // public getManagers(){

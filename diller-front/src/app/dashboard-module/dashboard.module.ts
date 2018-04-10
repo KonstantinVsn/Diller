@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StartComponent } from './start/start.component';
+import { DashboardComponent } from './dashboard-component/dashboard.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import {Routes, RouterModule} from '@angular/router';
-import { CarComponent } from './car/car.component';
+import { CarComponent } from './car-component/car.component';
+import {SideBarComponent} from './side-bar-component/side-bar.component'; 
 
 import { HttpClientModule }   from '@angular/common/http';
 
 const appRoutes: Routes =[
-  { path: 'start', component: StartComponent},
+  { path: 'dashboard', component: DashboardComponent},
   { path: 'car/:id', component: CarComponent },
 ];
 
@@ -20,6 +21,9 @@ const appRoutes: Routes =[
     RouterModule.forRoot(appRoutes),
     HttpClientModule
   ],
-  declarations: [StartComponent, CarComponent]
+  declarations: [
+     DashboardComponent,
+     CarComponent,
+     SideBarComponent]
 })
-export class StartModule { }
+export class DashboardModule { }

@@ -5,12 +5,12 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import {Routes, RouterModule} from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { LoginComponent} from './login-component/login.component';
-import { NavBarComponent } from './nav-bar-component/nav-bar.component';
-import { RegInComponent } from './reg-in-component/reg-in.component';
+import { LoginComponent} from './components/login-component/login.component';
+import { NavBarComponent } from './components/nav-bar-component/nav-bar.component';
+import { RegInComponent } from './components/reg-in-component/reg-in.component';
 
-import {StartModule} from './start-module/start.module';
-import { NotFoundComponent } from './not-found/not-found.component';
+import {DashboardModule} from './dashboard-module/dashboard.module';
+import { NotFoundComponent } from './components/not-found-component/not-found.component';
 
 const appRoutes: Routes =[
   { path: '', component: NotFoundComponent},
@@ -31,7 +31,7 @@ const appRoutes: Routes =[
     BrowserModule,
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot(appRoutes),
-    StartModule
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

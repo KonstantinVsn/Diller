@@ -4,13 +4,14 @@ import { Manager } from '../models/manager';
 import { ManagerService } from '../services/manager.service';
 import { Observable } from 'rxjs/Observable';
 
+import {SideBarComponent} from '../side-bar-component/side-bar.component'; 
 @Component({
-  selector: 'app-start',
-  templateUrl: './start.component.html',
-  styleUrls: ['./start.component.css'],
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css'],
   providers:[ManagerService]
 })
-export class StartComponent implements OnInit {
+export class DashboardComponent implements OnInit {
 public managers: Manager[]
 public manager: Manager
   @Output()
@@ -43,10 +44,11 @@ public manager: Manager
   }
 
   getMangers():void{
-    let m = this.managerService.getManagers()
-    .subscribe(managers => this.managers = managers );// //data => console.log(data)
-    
-    console.log("m"+m);
+    this.managerService.getManagers()
+    .subscribe(managers => {this.managers = managers
+    console.log(this.managers);
+    });
+
   }
   
   
