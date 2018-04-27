@@ -14,25 +14,27 @@ import { NotFoundComponent } from './components/not-found-component/not-found.co
 import { ManagerComponent } from './dashboard-module/manager-component/manager.component';
 import { DashboardComponent } from './dashboard-module/dashboard-component/dashboard.component';
 import { SideBarComponent } from './dashboard-module/side-bar-component/side-bar.component';
+
 const appRoutes: Routes =[
   { path: '', component: NotFoundComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'regin', component: RegInComponent} //{ path: '**', component: NotFoundComponent },
+  { path: 'regin', component: RegInComponent},
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    MDBBootstrapModule.forRoot(),
+    RouterModule.forRoot(appRoutes),
+    DashboardModule
+  ],
   declarations: [
     AppComponent,
     LoginComponent,
     NavBarComponent,
     RegInComponent,
     NotFoundComponent
-  ],
-  imports: [
-    BrowserModule,
-    MDBBootstrapModule.forRoot(),
-    RouterModule.forRoot(appRoutes),
-    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
