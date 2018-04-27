@@ -1,5 +1,7 @@
 export class Manager {
-    constructor(name: string, email: string, id: number, phone: string){
-
-    }
+    constructor(
+       public name: string,
+       public email: string,
+       public id: number,
+       public phone: string){}
 }

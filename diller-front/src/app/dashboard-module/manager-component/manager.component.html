@@ -1,0 +1,54 @@
+<h1>Список менеджеров</h1>
+<input type="button" value="Добавить" class="btn btn-default" (click)="addManager()" />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Имя</td>
+            <td>Возраст</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let manager of managers">
+            <ng-template [ngTemplateOutlet]="loadTemplate(manager)" 
+                        [ngTemplateOutletContext]="{ $implicit: manager}">
+            </ng-template>
+        </tr>
+    </tbody>
+</table>
+<div>{{statusMessage}}</div>
+   
+   
+<!--шаблон для чтения-->
+<ng-template #readOnlyTemplate let-manager>
+    <td>{{manager.id}}</td>
+    <td>{{manager.name}}</td>
+    <td>{{manager.email}}</td>
+    <td>
+        <input type="button" value="Изменить" class="btn btn-default" (click)="editManager(manager)" />
+    </td>
+    <td>
+        <input type="button" value="Удалить" (click)="deleteManager(manager)" class="btn btn-danger" />
+    </td>
+</ng-template>
+  
+<!--шаблон для редактирования-->
+<ng-template #editTemplate>
+    <td>
+        <input type="text" [(ngModel)]="editedManager.id" readonly disabled class="form-control" />
+    </td>
+    <td>
+        <input type="text" [(ngModel)]="editedManager.name" class="form-control" />
+    </td>
+    <td>
+        <input type="text" [(ngModel)]="editedManager.email" class="form-control" />
+    </td>
+    <td>
+        <input type="button" value="Сохранить" (click)="saveManager()" class="btn btn-success" />
+    </td>
+    <td>
+        <input type="button" value="Отмена" (click)="cancel()" class="btn btn-warning" />
+    </td>
+</ng-template>

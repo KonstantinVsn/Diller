@@ -1,38 +1,4 @@
-
-<app-side-bar>
-
-</app-side-bar>
-<div class="mx-auto w-50-p elegant-color-dark">
-  <div class="mx-auto row">
-    <form class="form-inline ml-md-auto">
-      <div class="md-form">
-        <input mdbActive type="email" class="form-control" id="form10" name="password">
-      </div>
-      <div class="md-form form-group">
-        <a class="btn btn-primary btn-sm waves-light teal darken-3" mdbRippleRadius>search</a>
-      </div>
-    </form>
-  </div>
-  <div class="row">
-    <div *ngFor="let car of carList" class="col-6 waves-light" mdbRippleRadius>
-      <!--First review-->
-      <div class="media mb-1 stylish-color-dark">
-        <a class="media-left waves-light pic-pos" mdbRippleRadius  routerLink="/car/{{car.id}}">
-          <img class="rounded-circle" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-13.jpg" alt="Generic placeholder image">
-        </a>
-        <div class="media-body p-10">
-          <div class="row">
-            <h6 class="media-heading">{{car.name}}</h6>
-            <h6>
-              <ul class="rating inline-ul">
-                <li *ngFor="let star of ' '.repeat(car.stars).split(''), let x = index">
-                  <i class="fa fa-star f-zise-12 amber-text"></i>
-                </li>
-              </ul>
-            </h6>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div id="desh" class="mx-auto w-50-p elegant-color-dark">
+    <app-car-list></app-car-list>
+    <app-manager></app-manager>
 </div>

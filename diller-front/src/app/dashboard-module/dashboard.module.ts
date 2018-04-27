@@ -8,22 +8,29 @@ import { CarComponent } from './car-component/car.component';
 import {SideBarComponent} from './side-bar-component/side-bar.component'; 
 
 import { HttpClientModule }   from '@angular/common/http';
-
-const appRoutes: Routes =[
-  { path: 'dashboard', component: DashboardComponent},
+import { ManagerComponent } from './manager-component/manager.component';
+import { FormsModule }   from '@angular/forms';
+import { CarListComponent } from './car-list-component/car-list.component';
+const appRoutes: Routes =[  
+  { path: 'carlist', component: CarListComponent},
+  { path: 'managers', component: ManagerComponent },
   { path: 'car/:id', component: CarComponent },
+  { path: 'dashboard', component: SideBarComponent }
 ];
 
 @NgModule({
   imports: [
     CommonModule,
     MDBBootstrapModule.forRoot(),
-    RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    RouterModule.forChild(appRoutes),
+    HttpClientModule,
+    FormsModule
   ],
   declarations: [
      DashboardComponent,
      CarComponent,
-     SideBarComponent]
+     SideBarComponent,
+     ManagerComponent,
+     CarListComponent]
 })
 export class DashboardModule { }
