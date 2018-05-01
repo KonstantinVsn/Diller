@@ -34,11 +34,10 @@
     color: white  
 }
 
-#desh{
-    margin: auto;
-width: 90%;
-border: 3px solid green;
-padding: 10px;
-position: relative;
-top: 100px;
+.deshboard{
+    border: 1px;
+    border-color: aqua;
+    position: relative;
+    top: 25px;
+    margin-left: 130px;
 }

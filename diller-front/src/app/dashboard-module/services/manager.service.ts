@@ -27,8 +27,7 @@ export class ManagerService {
   }
   getManagers(): Observable<Manager[]> {
     return this.http.get<Manager[]>(this.baseUrl + this.serviceUrl)
-      .pipe(
-      );
+      .pipe();
   }
   //getManagers() {
     //return this.http.get(this.baseUrl);

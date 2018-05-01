@@ -7,10 +7,7 @@ import { Observable } from 'rxjs/Observable';
 import {SideBarComponent} from '../side-bar-component/side-bar.component'; 
 @Component({
   selector: 'app-dashboard',
-  template: `<app-side-bar></app-side-bar>
-  <div>
-             <router-outlet></router-outlet>
-  </div>`,
+  template: `<app-side-bar></app-side-bar>`,
   styleUrls: ['./dashboard.component.css'],
   providers:[ManagerService]
 })

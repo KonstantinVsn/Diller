@@ -1,22 +1,19 @@
-<div class="pos-relative">
-  <div class="mx-auto row">
-    <form class="form-inline ml-md-auto">
-      <div class="md-form">
-        <input mdbActive type="email" class="form-control" id="form10" name="password">
-      </div>
-      <div class="md-form form-group">
-        <a class="btn btn-primary btn-sm waves-light teal darken-3" mdbRippleRadius>search</a>
-      </div>
-    </form>
-  </div>
-  <div class="row col-md-10 ml-auto">
-    <div *ngFor="let car of carList" class="col-6 waves-light" mdbRippleRadius>
-      <!--First review-->
-      <div class="media mb-1 stylish-color-dark">
-          
+<div class="mx-auto row">
+  <form class="form-inline ml-md-auto">
+    <div class="md-form">
+      <input mdbActive type="email" class="form-control" id="form10" name="password">
+    </div>
+    <div class="md-form form-group">
+      <a class="btn btn-primary btn-sm waves-light teal darken-3" mdbRippleRadius>search</a>
+    </div>
+  </form>
+</div>
+<div class="row col-md-10">
+  <div *ngFor="let car of carList" class="col-12">
+    <div class="row">
+      <div class="col-8 media mb-1 stylish-color-dark  waves-light" mdbRippleRadius>
         <a class="media-left waves-light pic-pos" mdbRippleRadius routerLink="{{car.id}}">
-          <img class="rounded-circle" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-13.jpg" 
-          alt="Generic placeholder image">
+          <img class="rounded-circle" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-13.jpg" alt="Generic placeholder image">
         </a>
         <div class="media-body p-10">
           <div class="row">
