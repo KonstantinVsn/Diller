@@ -27,7 +27,7 @@ export class ManagerComponent implements OnInit {
   }
 
   ngOnInit() {
-    //this.loadmanagers();
+    this.loadmanagers();
    }
   
   //загрузка пользователей
@@ -36,16 +36,20 @@ export class ManagerComponent implements OnInit {
       this.managers = data;
     });
   }
+
+  private printManagers(){
+    console.table(this.managers);
+  }
   // добавление пользователя
   addManager() {
-    this.editedManager= new Manager("", "", 0, "");
+    //this.editedManager= new Manager("", "", 0, "");
     this.managers.push(this.editedManager);
     this.isNewRecord = true;
   }
 
   // редактирование пользователя
   editManager(manager: Manager) {
-    this.editedManager = new Manager(manager.name, manager.email, manager.id,  manager.phone);
+    this.editedManager = new Manager(manager.id, manager.role, manager.email, manager.phoneNumber,  manager.firstName, manager.lastName);
   }
   // загружаем один из двух шаблонов
   loadTemplate(manager: Manager) {

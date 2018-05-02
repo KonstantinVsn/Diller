@@ -1,13 +1,15 @@
 <h1>Список менеджеров</h1>
 <input type="button" value="Добавить" class="btn btn-default" (click)="addManager()" />
+<input type="button" value="Вывести в консоль" class="btn btn-default" (click)="printManagers()" />
 <table class="table table-striped">
     <thead>
         <tr>
             <td>Id</td>
             <td>Имя</td>
-            <td>Возраст</td>
-            <td></td>
-            <td></td>
+            <td>фамилия</td>
+            <td>Email</td>
+            <td>Роль</td>
+            <td>Телефон</td>
         </tr>
     </thead>
     <tbody>
@@ -24,31 +26,43 @@
 <!--шаблон для чтения-->
 <ng-template #readOnlyTemplate let-manager>
     <td>{{manager.id}}</td>
-    <td>{{manager.name}}</td>
+    <td>{{manager.firstName}}</td>
+    <td>{{manager.lastName}}</td>
     <td>{{manager.email}}</td>
+    <td>{{manager.role}}</td>
+    <td>{{manager.phoneNumber}}</td>
     <td>
-        <input type="button" value="Изменить" class="btn btn-default" (click)="editManager(manager)" />
+        <input type="button" value="Изменить" class="full-rounded btn-default" (click)="editManager(manager)" />
     </td>
     <td>
-        <input type="button" value="Удалить" (click)="deleteManager(manager)" class="btn btn-danger" />
+        <input type="button" value="Удалить" (click)="deleteManager(manager)" class="full-rounded btn-danger" />
     </td>
 </ng-template>
   
 <!--шаблон для редактирования-->
 <ng-template #editTemplate>
     <td>
-        <input type="text" [(ngModel)]="editedManager.id" readonly disabled class="form-control" />
+        <input type="text" [(ngModel)]="editedManager.id" readonly disabled class="" />
     </td>
     <td>
-        <input type="text" [(ngModel)]="editedManager.name" class="form-control" />
+        <input type="text" [(ngModel)]="editedManager.firstName" class="" />
     </td>
     <td>
-        <input type="text" [(ngModel)]="editedManager.email" class="form-control" />
+        <input type="text" [(ngModel)]="editedManager.lastName" class="" />
     </td>
     <td>
-        <input type="button" value="Сохранить" (click)="saveManager()" class="btn btn-success" />
+        <input type="text" [(ngModel)]="editedManager.email" class="" />
     </td>
     <td>
-        <input type="button" value="Отмена" (click)="cancel()" class="btn btn-warning" />
+        <input type="text" [(ngModel)]="editedManager.role" class="" />
+    </td>
+    <td>
+        <input type="text" [(ngModel)]="editedManager.phoneNumber" class="" />
+    </td>
+    <td>
+        <input type="button" value="Сохранить" (click)="saveManager()" class="full-rounded btn-default" />
+    </td>
+    <td>
+        <input type="button" value="Отмена" (click)="cancel()" class="full-rounded btn-danger" />
     </td>
 </ng-template>
