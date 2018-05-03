@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { LoginUser } from '../../dashboard-module/models/loginUser';
 
 @Component({
   selector: 'app-login',
@@ -8,9 +9,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class LoginComponent implements OnInit {
 
   @Input()
-  public name: string
 
-  public surname: string = "lalalala"
+  public loginUser: LoginUser
   constructor() { }
 
   ngOnInit() {

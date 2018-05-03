@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import {Routes, RouterModule} from '@angular/router';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginComponent} from './components/login-component/login.component';
 import { NavBarComponent } from './components/nav-bar-component/nav-bar.component';
@@ -27,7 +27,8 @@ const appRoutes: Routes =[
     BrowserModule,
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot(appRoutes),
-    DashboardModule
+    DashboardModule,
+    FormsModule
   ],
   declarations: [
     AppComponent,

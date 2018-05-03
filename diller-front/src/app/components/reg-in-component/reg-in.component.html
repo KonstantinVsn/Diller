@@ -6,33 +6,39 @@
 
         <div class="md-form">
             <i class="fa fa-user prefix grey-text"></i>
-            <input type="text" id="orangeForm-name" class="form-control" mdbActive>
-            <label for="orangeForm-name">First name</label>
+            <input type="text" id="orangeForm-firstName" class="form-control" mdbActive 
+            [(ngModel)]="newUser.firstName" name="firstName"/>
+            <label for="orangeForm-firstName">First name</label>
         </div>
         <div class="md-form">
             <i class="fa fa-user prefix grey-text"></i>
-            <input type="text" id="orangeForm-name" class="form-control" mdbActive>
-            <label for="orangeForm-name">Secound name</label>
+            <input type="text" id="orangeForm-lastName" class="form-control" mdbActive
+            [(ngModel)]="newUser.lastName" name="lastName"/>
+            <label for="orangeForm-lastName">Secound name</label>
         </div>
         <div class="md-form">
             <i class="fa fa-phone prefix grey-text"></i>
-            <input type="text" id="orangeForm-name" class="form-control" mdbActive>
-            <label for="orangeForm-name">Phone</label>
+            <input type="text" id="orangeForm-phone" class="form-control" mdbActive
+            [(ngModel)]="newUser.phoneNumber" name="phoneNumber"/>
+            <label for="orangeForm-phone">Phone</label>
         </div>
         <div class="md-form">
             <i class="fa fa-envelope prefix grey-text"></i>
-            <input type="text" id="orangeForm-email" class="form-control" mdbActive>
+            <input type="text" id="orangeForm-email" class="form-control" mdbActive
+            [(ngModel)]="newUser.email" name="email"/>
             <label for="orangeForm-email">Your email</label>
         </div>
 
         <div class="md-form">
             <i class="fa fa-lock prefix grey-text"></i>
-            <input type="password" id="orangeForm-pass" class="form-control" mdbActive>
+            <input type="password" id="orangeForm-pass" class="form-control" mdbActive
+            [(ngModel)]="newUser.password" name="password"/>
             <label for="orangeForm-pass">Your password</label>
         </div>
 
         <div class="text-center">
-            <button class="btn btn-darken-3 waves-light" mdbRippleRadius>Sign up</button>
+            <button class="btn btn-darken-3 waves-light" (click)="Enter()"mdbRippleRadius>Sign up</button>
+            <button class="btn btn-darken-3 waves-light" (click)="log()" mdbRippleRadius>log</button>
         </div>
 
     </form>
