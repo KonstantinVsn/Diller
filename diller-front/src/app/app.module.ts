@@ -20,6 +20,9 @@ import { SideBarComponent } from './dashboard-module/side-bar-component/side-bar
 //Import toast module
 import {ToastModule} from 'ng2-toastr/ng2-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AuthenticateXHRBackend } from './AuthenticateXHRBackend ';
+import { XHRBackend, HttpModule, BrowserXhr } from '@angular/http';
+import { CustExtBrowserXhr } from './CustExtBrowserXhr';
 
 const appRoutes: Routes =[
   { path: '', component: NotFoundComponent},
@@ -38,7 +41,8 @@ const appRoutes: Routes =[
     FormsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
-    ToastModule.forRoot()
+    ToastModule.forRoot(),
+    HttpModule
   ],
   declarations: [
     AppComponent,
@@ -47,7 +51,11 @@ const appRoutes: Routes =[
     RegInComponent,
     NotFoundComponent
   ],
-  providers: [],
+  providers: [{provide: XHRBackend, useClass: AuthenticateXHRBackend},
+    { 
+      provide: BrowserXhr, 
+      useClass: CustExtBrowserXhr 
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

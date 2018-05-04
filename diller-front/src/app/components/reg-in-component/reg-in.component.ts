@@ -16,16 +16,16 @@ export class RegInComponent implements OnInit {
 
   ngOnInit() {
     this.newUser = new RegUser()
-    //this.initNewUser()
+    this.initNewUser()
   }
 
   initNewUser(){
-    this.newUser.email = ""
-    this.newUser.firstName = ""
-    this.newUser.lastName = ""
-    this.newUser.password = ""
-    this.newUser.phoneNumber = ""
-    this.newUser.role = ""
+    this.newUser.email = "Konstantin@gmail.com"
+    this.newUser.firstName = "Konstantin"
+    this.newUser.lastName = "Konstantin"
+    this.newUser.password = "qwerty"
+    this.newUser.phoneNumber = "+21432132121"
+    this.newUser.role = "manager"
   }
   log(){
     this.showSuccess()
@@ -33,14 +33,19 @@ export class RegInComponent implements OnInit {
   }
 
   Enter(){
-    debugger;
     this.auth.createNewUser(this.newUser).subscribe(
-                          (data: string) => {console.log(data)},
-                          error => console.log(error)
-                      );
+      result =>  console.log(result),
+      error => {
+        this.showError(error)
+      }
+    );  
   }
 
   showSuccess() {
     this.toastr.success('Hello world!', 'Toastr fun!');
+  }
+
+  showError(message: string) {
+    this.toastr.error('Error', message);
   }
 }
