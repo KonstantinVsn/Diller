@@ -23,6 +23,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AuthenticateXHRBackend } from './AuthenticateXHRBackend ';
 import { XHRBackend, HttpModule, BrowserXhr } from '@angular/http';
 import { CustExtBrowserXhr } from './CustExtBrowserXhr';
+import { LoaderComponent } from './components/loader-component/loader.component';
 
 const appRoutes: Routes =[
   { path: '', component: NotFoundComponent},
@@ -49,7 +50,8 @@ const appRoutes: Routes =[
     LoginComponent,
     NavBarComponent,
     RegInComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoaderComponent
   ],
   providers: [{provide: XHRBackend, useClass: AuthenticateXHRBackend},
     { 

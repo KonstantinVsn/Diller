@@ -12,7 +12,7 @@ export abstract class BaseService {
     if (applicationError) {
       return Observable.throw(applicationError);
     }
-    debugger
+    
     var modelStateErrors: string = '';
     
     var serverError = error.json();
@@ -25,6 +25,6 @@ export abstract class BaseService {
     }
 
     modelStateErrors = modelStateErrors = '' ? null : modelStateErrors;
-    return Observable.throw(modelStateErrors || "GOVNOO!!!!");
+    return Observable.throw(modelStateErrors || "Error!");
   }
 }

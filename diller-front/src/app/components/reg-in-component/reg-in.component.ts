@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 export class RegInComponent implements OnInit {
 
   constructor(private auth : AuthService, private toastr: ToastrService) { }
-
+  public hide: boolean = true
   public newUser: RegUser
 
   ngOnInit() {
@@ -25,16 +25,18 @@ export class RegInComponent implements OnInit {
     this.newUser.lastName = "Konstantin"
     this.newUser.password = "qwerty"
     this.newUser.phoneNumber = "+21432132121"
-    this.newUser.role = "manager"
+    this.newUser.role = "Manager"
   }
   log(){
+    this.hide = true
     this.showSuccess()
     console.log(this.newUser);
   }
 
   Enter(){
+    this.hide = false
     this.auth.createNewUser(this.newUser).subscribe(
-      result =>  console.log(result),
+      result =>  this.showSuccess(),
       error => {
         this.showError(error)
       }
@@ -42,10 +44,12 @@ export class RegInComponent implements OnInit {
   }
 
   showSuccess() {
-    this.toastr.success('Hello world!', 'Toastr fun!');
+    this.toastr.success('Success!');
+    this.hide = true
   }
 
   showError(message: string) {
     this.toastr.error('Error', message);
+    this.hide = true
   }
 }
