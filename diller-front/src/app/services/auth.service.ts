@@ -8,6 +8,7 @@ import {Observable} from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/Rx'; 
 
 import { BaseService } from './base.service';
+import { LoginUser } from '../dashboard-module/models/loginUser';
 
 
 @Injectable()
@@ -19,13 +20,26 @@ export class AuthService extends BaseService{
    }
 
 
-  public createNewUser(newUser: RegUser): Observable<RegUser>{
+  public createNewUser(newUser: RegUser){
     let headers = new Headers({
       'Content-Type': 'application/json'
     });
 
     return this.http.post(this.baseUrl + "/api/signin", newUser, {headers: headers})
-    .map(res => true)
-    .catch(this.handleError);
+    .map(res => res.json())
+    
+  }
+
+  public logIn(loginUser: LoginUser){
+    let headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+
+    return this.http.post(this.baseUrl + "/api/auth/login", loginUser, {headers: headers})
+  }
+
+
+  logError(err) {
+    console.error('There was an error: ' + err);
   }
 }

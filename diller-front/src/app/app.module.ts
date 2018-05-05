@@ -24,11 +24,13 @@ import { AuthenticateXHRBackend } from './AuthenticateXHRBackend ';
 import { XHRBackend, HttpModule, BrowserXhr } from '@angular/http';
 import { CustExtBrowserXhr } from './CustExtBrowserXhr';
 import { LoaderComponent } from './components/loader-component/loader.component';
+import { InfoComponent } from './components/info-component/info.component';
 
 const appRoutes: Routes =[
   { path: '', component: NotFoundComponent},
   { path: 'login', component: LoginComponent},
   { path: 'regin', component: RegInComponent},
+  { path: 'info', component: InfoComponent},
   { path: '**', component: NotFoundComponent },
 ];
 
@@ -51,7 +53,8 @@ const appRoutes: Routes =[
     NavBarComponent,
     RegInComponent,
     NotFoundComponent,
-    LoaderComponent
+    LoaderComponent,
+    InfoComponent
   ],
   providers: [{provide: XHRBackend, useClass: AuthenticateXHRBackend},
     { 
