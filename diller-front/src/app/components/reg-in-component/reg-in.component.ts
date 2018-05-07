@@ -7,12 +7,11 @@ import { Notify } from '../../shared/notify';
   selector: 'app-reg-in',
   templateUrl: './reg-in.component.html',
   styleUrls: ['./reg-in.component.css'],
-  providers: [AuthService]
+  providers: [AuthService, Notify]
 })
-export class RegInComponent extends Notify implements OnInit {
+export class RegInComponent implements OnInit {
 
-  constructor(private auth : AuthService, public toastr: ToastrService) {
-    super(toastr)
+  constructor(private auth : AuthService, public notificator: Notify) {
    }
   public hide: boolean = true
   public newUser: RegUser
@@ -36,9 +35,9 @@ export class RegInComponent extends Notify implements OnInit {
     this.auth.createNewUser(this.newUser)
     .subscribe(
       data => {
-        this.showSuccess()
+        this.notificator.showSuccess()
       },
-      err => this.showError(err),
+      err => this.notificator.showError(err),
       () => console.log('Completed')
     ); 
   }

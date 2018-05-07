@@ -11,6 +11,13 @@ div{
 .grey{
     background: #242424
 }
+.light-grey{
+    background-color: #cacaca;
+}
+
+.text-grey{
+    color: #242424;
+}
 
 .w-50{
     width: 50%;
@@ -43,3 +50,4 @@ div{
 .pos-relative{
     position: relative;
 }
+

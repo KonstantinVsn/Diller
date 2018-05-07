@@ -1,14 +1,14 @@
 <h1>Список менеджеров</h1>
 <input type="button" value="Добавить" class="btn btn-default" (click)="addManager()" />
-<input type="button" value="Вывести в консоль" class="btn btn-default" (click)="printManagers()" />
+<!-- <input type="button" value="Вывести в консоль" class="btn btn-default" (click)="printManagers()" /> -->
 <table class="table table-striped">
     <thead>
         <tr>
-            <td>Id</td>
+            <!-- <td>Id</td> -->
             <td>Имя</td>
             <td>фамилия</td>
             <td>Email</td>
-            <td>Роль</td>
+            <!-- <td>Роль</td> -->
             <td>Телефон</td>
         </tr>
     </thead>
@@ -20,16 +20,16 @@
         </tr>
     </tbody>
 </table>
-<div>{{statusMessage}}</div>
+<!-- <div>{{statusMessage}}</div> -->
    
    
 <!--шаблон для чтения-->
 <ng-template #readOnlyTemplate let-manager>
-    <td>{{manager.id}}</td>
+    <!-- <td>{{manager.id}}</td> -->
     <td>{{manager.firstName}}</td>
     <td>{{manager.lastName}}</td>
     <td>{{manager.email}}</td>
-    <td>{{manager.role}}</td>
+    <!-- <td>{{manager.role}}</td> -->
     <td>{{manager.phoneNumber}}</td>
     <td>
         <input type="button" value="Изменить" class="full-rounded btn-default" (click)="editManager(manager)" />
@@ -41,9 +41,9 @@
   
 <!--шаблон для редактирования-->
 <ng-template #editTemplate>
-    <td>
+    <!-- <td>
         <input type="text" [(ngModel)]="editedManager.id" readonly disabled class="" />
-    </td>
+    </td> -->
     <td>
         <input type="text" [(ngModel)]="editedManager.firstName" class="" />
     </td>
@@ -53,9 +53,9 @@
     <td>
         <input type="text" [(ngModel)]="editedManager.email" class="" />
     </td>
-    <td>
+    <!-- <td>
         <input type="text" [(ngModel)]="editedManager.role" class="" />
-    </td>
+    </td> -->
     <td>
         <input type="text" [(ngModel)]="editedManager.phoneNumber" class="" />
     </td>

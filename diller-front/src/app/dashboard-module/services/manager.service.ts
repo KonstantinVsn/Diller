@@ -34,14 +34,16 @@ export class ManagerService {
   //}
 
   createManager(manager: Manager) {
-    return this.http.post(this.baseUrl, manager);
+    return this.http.post(this.baseUrl+ "/Managers", manager).map(res => res);
   }
+
   updateManager(id: number, manager: Manager) {
     const urlParams = new HttpParams().set("id", id.toString());
-    return this.http.put(this.baseUrl, manager, { params: urlParams });
+    return this.http.put(this.baseUrl + "/Managers/" + id, manager);
   }
+
   deleteManager(id: number) {
-    const urlParams = new HttpParams().set("id", id.toString());
-    return this.http.delete(this.baseUrl, { params: urlParams });
+    //const urlParams = new HttpParams().set("id", id.toString());
+    return this.http.delete(this.baseUrl + "/Managers/" + id);
   }
 }

@@ -11,13 +11,13 @@
 <div class="row col-md-10">
   <div *ngFor="let car of carList" class="col-12">
     <div class="row">
-      <div class="col-8 media mb-1 stylish-color-dark  waves-light" mdbRippleRadius>
+      <div class="col-12 media mb-1 light-grey waves-light text-grey" mdbRippleRadius>
         <a class="media-left waves-light pic-pos" mdbRippleRadius routerLink="{{car.id}}">
           <img class="rounded-circle" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-13.jpg" alt="Generic placeholder image">
         </a>
         <div class="media-body p-10">
           <div class="row">
-            <h6 class="media-heading">{{car.name}}</h6>
+            <h6 class="media-heading text-grey">{{car.name}}</h6>
             <h6>
               <ul class="rating inline-ul">
                 <li *ngFor="let star of ' '.repeat(car.stars).split(''), let x = index">
