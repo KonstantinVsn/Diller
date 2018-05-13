@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Manager } from '../models/manager';
 import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 import 'rxjs/add/operator/map';
 
@@ -27,7 +26,7 @@ export class ManagerService {
   }
   getManagers(): Observable<Manager[]> {
     return this.http.get<Manager[]>(this.baseUrl + this.serviceUrl)
-      .pipe();
+      //.pipe();
   }
   //getManagers() {
     //return this.http.get(this.baseUrl);

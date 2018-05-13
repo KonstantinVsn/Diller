@@ -1,4 +1,4 @@
-<div class="mx-auto row">
+<!-- <div class="mx-auto row">
   <form class="form-inline ml-md-auto">
     <div class="md-form">
       <input mdbActive type="email" class="form-control" id="form10" name="password">
@@ -30,4 +30,84 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
+
+<h1>Список машин</h1>
+<!-- <input type="button" value="Log" class="btn btn-default" (click)="print()" /> -->
+<!-- <input type="button" value="Добавить" class="btn btn-default" (click)="addCar()" /> -->
+<!-- <input type="button" value="Вывести в консоль" class="btn btn-default" (click)="printManagers()" /> -->
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <!-- <td>Id</td> -->
+            <td>Бренд</td>
+            <td>Категория</td>
+            <td>Цвет</td>
+            <td>Обьем двигателя</td>
+            <td>Высота</td>
+            <td>Ширина</td>
+            <td>Длина</td>
+            <td>Год</td>
+            <td>Скорость</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let car of carList">
+            <ng-template [ngTemplateOutlet]="loadTemplate(car)" 
+                        [ngTemplateOutletContext]="{ $implicit: car}">
+            </ng-template>
+        </tr>
+    </tbody>
+</table>
+<!-- <div>{{statusMessage}}</div> -->
+   
+   
+<!--шаблон для чтения-->
+<ng-template #readOnlyTemplate let-car>
+    <!-- <td>{{manager.id}}</td> -->
+    <td>{{car?.brand.name}}</td>
+    <td>{{car?.category.name}}</td>
+    <td>
+        <span [ngStyle]="{'background-color':'car?.color'}" [style.background-color]="car?.color" class="dot"></span>
+    </td>
+    <td>{{car?.enVolume}}</td>
+    <td>{{car?.height}}</td>
+    <td>{{car?.width}}</td>
+    <td>{{car?.length}}</td>
+    <td>{{car?.year}}</td>
+    <td>{{car?.maxSpeed}}</td>
+    <!-- <td>
+        <input type="button" value="Изменить" class="full-rounded btn-default" (click)="editCar(car)" />
+    </td>
+    <td>
+        <input type="button" value="Удалить" (click)="deleteCar(car)" class="full-rounded btn-danger" />
+    </td> -->
+</ng-template>
+  
+<!--шаблон для редактирования-->
+<ng-template #editTemplate>
+    <!-- <td>
+        <input type="text" [(ngModel)]="editedCar.id" readonly disabled class="" />
+    </td> -->
+    <td>
+        <input type="text" [(ngModel)]="editedCar.firstName" class="" />
+    </td>
+    <td>
+        <input type="text" [(ngModel)]="editedCar.lastName" class="" />
+    </td>
+    <td>
+        <input type="text" [(ngModel)]="editedCar.email" class="" />
+    </td>
+    <!-- <td>
+        <input type="text" [(ngModel)]="editedCar.role" class="" />
+    </td> -->
+    <td>
+        <input type="text" [(ngModel)]="editedCar.phoneNumber" class="" />
+    </td>
+    <td>
+        <input type="button" value="Сохранить" (click)="saveCar()" class="full-rounded btn-default" />
+    </td>
+    <td>
+        <input type="button" value="Отмена" (click)="cancel()" class="full-rounded btn-danger" />
+    </td>
+</ng-template>
